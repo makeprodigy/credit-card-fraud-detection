@@ -42,28 +42,32 @@ st.markdown(
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-/* Root variables */
+/* Root variables — monochromatic black/grey palette */
 :root {
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --danger: #ef4444;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --bg-dark: #0f0f1a;
-    --bg-card: #1a1a2e;
-    --bg-card2: #16213e;
-    --text-muted: #94a3b8;
+    --bg-base:    #0a0a0a;
+    --bg-surface: #111111;
+    --bg-card:    #1a1a1a;
+    --bg-card2:   #222222;
+    --border:     #2a2a2a;
+    --border-hi:  #3d3d3d;
+    --accent:     #e5e5e5;
+    --accent-dim: #a0a0a0;
+    --text:       #f0f0f0;
+    --text-muted: #6b6b6b;
+    --danger:     #dc2626;
+    --success:    #16a34a;
 }
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
 }
 
+/* ── App background ─────────────────────────────────────── */
 .stApp {
-    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0f0f1a 100%);
+    background: #0a0a0a;
 }
 
-/* Header */
+/* ── Hero header ────────────────────────────────────────── */
 .hero-header {
     text-align: center;
     padding: 2.5rem 1rem 1.5rem;
@@ -72,115 +76,126 @@ html, body, [class*="css"] {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #6366f1, #a78bfa, #60a5fa);
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 60%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 .hero-subtitle {
-    color: #94a3b8;
+    color: #6b6b6b;
     font-size: 1.05rem;
     margin-top: 0.5rem;
+    letter-spacing: 0.02em;
 }
 
-/* Metric cards */
+/* ── Metric cards ───────────────────────────────────────── */
 .metric-card {
-    background: linear-gradient(135deg, #1e1e3a 0%, #1a1a2e 100%);
-    border: 1px solid rgba(99,102,241,0.3);
-    border-radius: 14px;
+    background: #111111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
     padding: 1.2rem 1.4rem;
     text-align: center;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .metric-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(99,102,241,0.7);
+    border-color: #3d3d3d;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
 .metric-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #94a3b8;
+    color: #6b6b6b;
     font-weight: 600;
 }
 .metric-value {
     font-size: 1.9rem;
     font-weight: 700;
-    color: #a78bfa;
+    color: #e5e5e5;
     line-height: 1.3;
 }
 
-/* Prediction badges */
+/* ── Prediction badges ──────────────────────────────────── */
 .badge-fraud {
     display: inline-block;
-    background: linear-gradient(135deg, #ef4444, #b91c1c);
-    color: white;
+    background: #dc2626;
+    color: #fff;
     font-weight: 700;
     font-size: 1.1rem;
     padding: 0.6rem 1.8rem;
-    border-radius: 999px;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 20px rgba(239,68,68,0.5);
+    border-radius: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 0 28px rgba(220,38,38,0.35);
 }
 .badge-legit {
     display: inline-block;
-    background: linear-gradient(135deg, #10b981, #065f46);
-    color: white;
+    background: #16a34a;
+    color: #fff;
     font-weight: 700;
     font-size: 1.1rem;
     padding: 0.6rem 1.8rem;
-    border-radius: 999px;
-    letter-spacing: 0.05em;
-    box-shadow: 0 0 20px rgba(16,185,129,0.5);
+    border-radius: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 0 28px rgba(22,163,74,0.3);
 }
 
-/* Section headers */
+/* ── Section headers ────────────────────────────────────── */
 .section-header {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.35rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #e5e5e5;
     margin-bottom: 0.8rem;
-    border-left: 4px solid #6366f1;
+    border-left: 3px solid #d4d4d4;
     padding-left: 0.75rem;
 }
 
-/* Sidebar styling */
+/* ── Sidebar ────────────────────────────────────────────── */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
-    border-right: 1px solid rgba(99,102,241,0.2);
+    background: #0d0d0d;
+    border-right: 1px solid #1f1f1f;
 }
 
-/* Button styling */
+/* ── Buttons ────────────────────────────────────────────── */
 .stButton > button {
-    background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 10px !important;
+    background: #1f1f1f !important;
+    color: #e5e5e5 !important;
+    border: 1px solid #3d3d3d !important;
+    border-radius: 8px !important;
     font-weight: 600 !important;
     padding: 0.55rem 1.5rem !important;
-    transition: transform 0.15s, box-shadow 0.15s !important;
+    letter-spacing: 0.02em !important;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s !important;
 }
 .stButton > button:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(99,102,241,0.45) !important;
+    background: #2a2a2a !important;
+    border-color: #555555 !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.6) !important;
 }
 
-/* Divider */
+/* ── Divider ────────────────────────────────────────────── */
 hr {
-    border-color: rgba(99,102,241,0.15) !important;
+    border-color: #1f1f1f !important;
 }
 
+/* ── Info box ───────────────────────────────────────────── */
 .info-box {
-    background: rgba(99,102,241,0.08);
-    border: 1px solid rgba(99,102,241,0.25);
+    background: #111111;
+    border: 1px solid #2a2a2a;
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
-    color: #c7d2fe;
+    color: #a0a0a0;
     font-size: 0.88rem;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+.info-box b {
+    color: #d4d4d4;
 }
 </style>
 """,
@@ -280,7 +295,7 @@ st.markdown("---")
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### 🛡️ FraudShield")
-    st.markdown("<small style='color:#94a3b8'>ML-Powered Fraud Detection</small>", unsafe_allow_html=True)
+    st.markdown("<small style='color:#6b6b6b'>ML-Powered Fraud Detection</small>", unsafe_allow_html=True)
     st.markdown("---")
 
     page = st.radio(
@@ -328,7 +343,7 @@ if "Single" in page:
     st.markdown('<div class="section-header">🔍 Single Transaction Predictor</div>', unsafe_allow_html=True)
     st.markdown(
         f"Using **{MODEL_INFO[model_key]['icon']} {MODEL_INFO[model_key]['label']}** — "
-        f"<span style='color:#94a3b8'>{MODEL_INFO[model_key]['desc']}</span>",
+        f"<span style='color:#6b6b6b'>{MODEL_INFO[model_key]['desc']}</span>",
         unsafe_allow_html=True,
     )
     st.markdown("")
@@ -497,7 +512,7 @@ elif "Insights" in page:
             with st.container():
                 st.markdown(
                     f"""
-**{info['icon']} {info['label']}** &nbsp;·&nbsp; <span style='color:#94a3b8'>{status}</span>
+**{info['icon']} {info['label']}** &nbsp;·&nbsp; <span style='color:#6b6b6b'>{status}</span>
 
 {info['desc']}
                     """,
@@ -570,7 +585,7 @@ elif "Insights" in page:
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("---")
 st.markdown(
-    "<div style='text-align:center;color:#475569;font-size:0.8rem'>"
+    "<div style='text-align:center;color:#3d3d3d;font-size:0.8rem'>"
     "FraudShield · Built with Streamlit & scikit-learn · "
     "Dataset: Kaggle Credit Card Fraud Detection (ULB)"
     "</div>",
